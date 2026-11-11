@@ -1,3 +1,21 @@
+<?php
+
+include ("db-tilkobling.php");
+
+if (isset($_POST["brukernavn"]))
+{
+    $brukernavn = $_POST["brukernavn"];
+    $fornavn = $_POST["fornavn"];
+    $etternavn = $_POST["etternavn"];
+    $klassekode = $_POST["klassekode"];
+
+    $sqlSetning="INSERT INTO student VALUES('$brukernavn','$fornavn','$etternavn','$klassekode')";
+    
+    mysqli_query($db,$sqlSetning);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
